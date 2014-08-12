@@ -110,7 +110,7 @@ function canvasApp() {
 		drawCount = 0;
 		context.setTransform(1,0,0,1,0,0);
 
-		context.clearRect(0,0,displayWidth,displayHeight);
+		//context.clearRect(0,0,displayWidth,displayHeight);
 
 		setCircles();
 
@@ -120,7 +120,10 @@ function canvasApp() {
 		lineNumber = 20;
 
 		if(timer) clearInterval(timer);
-		timer = setInterval(onTimer,1800/100);
+		timer = setInterval(onTimer,1800/60);
+		//onTimer();
+		//setTimeout(onTimer,1000);
+
 
 	}
 
