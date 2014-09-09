@@ -6,7 +6,7 @@
 
 <title>HTML5 Canvas crap</title>
 
-<script src="../Modernizr/modernizr-2.0.6.js"></script>
+<script src="../javascripts/modernizr-2.0.6.js"></script>
 
 <script type="text/javascript">
 
@@ -285,8 +285,8 @@ function canvasApp() {
 		}
 	}
 
-	//Here is the function that defines a noisy (but not wildly varying) data set which we will use to draw the curves.
-	//We first define the points in a linked list, but then store the values in an array.
+	//function that makes a 'noisy' data set which we will use to draw the curves.
+	//define the points in a linked list, but then store the values in an array.
 	function setLinePoints(iterations) {
 		var pointList = {};
 		var pointArray = [];
@@ -331,7 +331,7 @@ function canvasApp() {
 		}
 
 		//normalize to values between 0 and 1
-		//Also store y values in array here.
+		//Also store y values in array
 		if (maxY != minY) {
 			var normalizeRate = 1/(maxY - minY);
 			point = pointList.first;
@@ -341,7 +341,6 @@ function canvasApp() {
 				point = point.next;
 			}
 		}
-		//unlikely that max = min, but could happen if using zero iterations. In this case, set all points equal to 1.
 		else {
 			point = pointList.first;
 			while (point != null) {
